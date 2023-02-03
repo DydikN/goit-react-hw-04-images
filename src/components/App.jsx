@@ -21,13 +21,6 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [error, setError] = useState(null);
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   const { searchQuery, page } = this.state;
-  //   if (prevState.searchQuery !== searchQuery || prevState.page !== page) {
-  //     this.fetchImages();
-  //   }
-  // }
-
   useEffect(() => {
     if (!searchQuery) {
       return;

@@ -7,9 +7,7 @@ function Modal({ imgAlt, imgLargeSrc, onModalClose }) {
   useEffect(() => {
     document.addEventListener('keydown', onKeyPress);
 
-    return () => {
-      document.removeEventListener('keydown', onKeyPress);
-    };
+    return () => document.removeEventListener('keydown', onKeyPress);
   });
 
   const onKeyPress = event => {
