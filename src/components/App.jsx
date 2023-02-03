@@ -34,6 +34,7 @@ function App() {
           return [...prevItems, ...hits];
         });
         setTotalHits(totalHits);
+        notification(totalHits, page);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -66,6 +67,18 @@ function App() {
     setShowModal(false);
     setImgAlt('');
     setLargeImageURL('');
+  };
+
+  const notification = (totalHits, page) => {
+    if (totalHits === 0) {
+      return Notiflix.Notify.failure('No image found');
+    }
+
+    if (page > 1) {
+      return;
+    } else {
+      Notiflix.Notify.success(`Found ${totalHits} images`);
+    }
   };
 
   return (
